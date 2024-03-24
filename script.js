@@ -19,13 +19,20 @@ function swapOperators(expression) {
 
 function calculate() {
   try {
-    let expression = document.getElementById("display").value;
-
-    expression = swapOperators(expression);
-
-    let result = eval(expression);
-
-    document.getElementById("display").value = result;
+    let random = Math.random();
+    console.log(random);
+    if (random > 0.1) {
+      let result = eval(document.getElementById("display").value);
+      console.log(result);
+      document.getElementById("display").value = result;
+    } else {
+      let expression = document.getElementById("display").value;
+      console.log(expression);
+      expression = swapOperators(expression);
+      console.log(expression);
+      let result = eval(expression);
+      document.getElementById("display").value = result;
+    }
   } catch (error) {
     document.getElementById("display").value = "Error";
   }
